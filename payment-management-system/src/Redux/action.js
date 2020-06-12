@@ -14,4 +14,6 @@ export const addCategory =(obj)=>{
         payload:obj
     }
  }
+
+ 
  

@@ -25,15 +25,25 @@ handleChange =(e)=>{
      console.log(this.props)
      let {addCategory,Category} = this.props
         return(
-            <div className ="conntainer">
+            <div className ="container mt-3 p-3">
                     <div className = "row">
-                <div className = "col-4">
+                <div style = {{overflow:"hidden"}} className = "col-6 bg bg-secondary p-5 offset-3 shadow-md" >
                     <input placeholder ="Add category" name = "category" value = {this.state.category} onChange  = {(e)=>this.handleChange(e)} className ="form-control"/>
-                    <button onClick = {()=>addCategory(categoryDetails)} className = "btn btn-danger">Add User</button>
+                    <button onClick = {()=>addCategory(categoryDetails)} className = "btn btn-danger mt-2">Add  Catgory</button>
+                    <div>
+                    <ul>
+                          {
+                               Category.map(item=><li  style = {{fontSize:"30px"}} key = {uuidv4()} className = "font-weight-bold">{item.Category}</li>)
+                          }
+                    </ul>
+                    </div>
+                   
+                  
                 </div>
-               {
-                   Category.map(item=><li>{item.Category}</li>)
-               }
+               
+                
+                
+               
                     </div>
             </div>
         )

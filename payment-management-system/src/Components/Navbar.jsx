@@ -18,13 +18,13 @@ let data = [
     }
 ]
     return(
-        <div className  = "container bg bg-dark">
-            <div className  = "row">
+      
+            <div className  = "row text-primary bg bg-light p-4 shadow-lg ">
            {
-               data.map(item=><div key = {uuidv4()} className = "col-4"><Link style = {{color:"white",fontWeight:"Bold"}} to =  {item.path}>{item.link}</Link></div>)
+               data.map(item=><div  key = {uuidv4()} className = "col-4"><Link style = {{color:"black",fontWeight:"Bold"}} to =  {item.path}>{item.link}</Link></div>)
            }
             </div>
-        </div>
+    
     )
 }
 export default Navbar

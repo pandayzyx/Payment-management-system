@@ -25,18 +25,20 @@ handleChange =(e)=>{
         }
         console.log(this.props)
         let {addUser,User} = this.props
+        console.log(User)
         return(
-            <div className ="container">
+            <div className ="container mt-3 p-3">
 
-                <div className = "col-4">
+                <div style = {{overflow:"hidden"}} className = "col-6 bg bg-secondary p-5 offset-3">
                     <input name = "user" value = {this.state.user} onChange  = {(e)=>this.handleChange(e)} className ="form-control"/>
-                    <button onClick = {()=>addUser(userDetails)} className = "btn btn-danger">Add User</button>
-            
-
-            {
-                   User.map(item=><li>{item.User}</li>)
-
+                    <button onClick = {()=>addUser(userDetails)} className = "btn btn-danger mt-2">Add User</button>
+                <ul>
+   
+                {
+                   User.map(item=><li style = {{fontSize:"30px"}} className = "font-weight-bold" key  ={uuidv4()} >{item.User}</li>)
             }
+                </ul>
+
                 </div>
             </div>
         )
