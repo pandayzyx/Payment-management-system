@@ -1,6 +1,7 @@
 import React  from  "react"
 import {connect} from  "react-redux"
 import { v4 as uuidv4 } from 'uuid';
+import {addUserExpenseDetails} from  "../Redux/action"
 
 
 class UserExpenseDetails extends React.Component{
@@ -10,7 +11,9 @@ class UserExpenseDetails extends React.Component{
               budget :"",
               description:"",
               amount:"",
-              type:""
+              type:"",
+              day:"",
+              category:""
            }
         
     }
@@ -20,17 +23,30 @@ class UserExpenseDetails extends React.Component{
         })
      }
   render (){
-    let {match,User,Type} =  this.props
-    console.log(User)
+    let {match,User,Type,addUserExpenseDetails,UserExpenseDetails,Category} =  this.props
+    console.log(UserExpenseDetails)
+    console.log(this.state.budget)
     let arr = [1000,2000,3000,5000,10000,15000,20000,30000,50000]
-    let item  =  User.find(item=>item.id === Number((match.params.id)))
-    console.log(item)
+    let userDetails = {
+        id:Number(match.params.id),
+        Description:this.state.description,
+        Amount:this.state.amount,
+        Budget:this.state.budget,
+        Type:this.state.type,
+        Category:this.state.category
+    }
+    let i = 1
+    let dayArr =[]
+    while(i<=30){
+        dayArr.push(i)
+        i++
+    }
      return(
          <>
      <div className = "row">
             <div className = "col-4 offset-4">
             
-            <select name = "id" onChange = {(e)=>this.handleChange(e)}  value  = {this.state.id} className = "form-control">
+            <select name = "budget" onChange = {(e)=>this.handleChange(e)}  value  = {this.state.budget} className = "form-control">
             <option value = "">--Choose Budget</option>
             {
                 arr.map(item=><option key = {uuidv4()} value = {item}>{item}</option>)
@@ -40,24 +56,41 @@ class UserExpenseDetails extends React.Component{
                 </div> 
      </div>
      <div className  = "row mt-5 ">
-         <div className = "col-4">
+         <div className = "col-2">
          <input placeholder  ="Enter Description" name = "description" value = {this.state.description} onChange  = {(e)=>this.handleChange(e)} className ="form-control"/>
            
          </div>
-         <div className ="col-4">
+         <div className ="col-2">
          <input placeholder ="Enter Amount" name = "amount" value = {this.state.amount} onChange  = {(e)=>this.handleChange(e)} className ="form-control"/>
 
          </div>
-         <div className = "col-4">
-         <select name = "id" onChange = {(e)=>this.handleChange(e)}  value  = {this.state.id} className = "form-control">
+         <div className = "col-2">
+         <select name = "type" onChange = {(e)=>this.handleChange(e)}  value  = {this.state.type} className = "form-control">
             <option value = "">--Choose Type</option>
             {
                 Type.map(item=><option key = {uuidv4()} value = {item}>{item}</option>)
             }
            </select> 
          </div>
+         <div className  ="col-2">
+         <select name = "day" onChange = {(e)=>this.handleChange(e)}  value  = {this.state.day} className = "form-control">
+            <option value = "">--Choose Day</option>
+            {
+                dayArr.map(item=><option key = {uuidv4()} value = {item}>{item}</option>)
+            }
+           </select>
+         </div>
+
+         <div className  ="col-2">
+         <select name = "category" onChange = {(e)=>this.handleChange(e)}  value  = {this.state.category} className = "form-control">
+            <option value = "">--Choose Category</option>
+            {
+                Category.map(item=><option key = {uuidv4()} value = {item.Category}>{item.Category}</option>)
+            }
+           </select>
+         </div>
          <div className = "col-4 offset-4 mt-4">
-             <button className = "btn btn-danger">Add</button>
+             <button onClick ={()=>addUserExpenseDetails(userDetails)} className = "btn btn-danger">Add</button>
          </div>
      </div>
      </>
@@ -68,13 +101,15 @@ class UserExpenseDetails extends React.Component{
 const MapStateToProps = state=>{
     return{
         User:state.User,
-        Type:state.Type
+        Type:state.Type,
+        UserExpenseDetails:state.UserExpenseDetails,
+        Category:state.Category
     }
   }
-// const MapDispatchToProps  = dispatch=>{
-// return{
-//     addUser:(payload)=>dispatch(addUser(payload))
-// }
-// }
+const MapDispatchToProps  = dispatch=>{
+return{
+    addUserExpenseDetails:(payload)=>dispatch(addUserExpenseDetails(payload))
+}
+}
 
-export default connect(MapStateToProps,null)(UserExpenseDetails)
+export default connect(MapStateToProps,MapDispatchToProps)(UserExpenseDetails)

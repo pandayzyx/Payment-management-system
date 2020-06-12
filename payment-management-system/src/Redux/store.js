@@ -29,11 +29,13 @@ const initState = {
  UserExpenseDetails:[
      {
          id:1,
-         details:[{Description:"",Amount:45,Type:"Expense"}]
+         Budget:"",
+         details:[{Description:"Bought Sugar",Amount:45,Type:"Expense",day:1,Category:"House Rent"}]
      },
      {
         id:2,
-        details:[{Description:"",Amount:45,Type:"Expense"}]
+        Budget:"",
+        details:[{Description:"Bought Shoes",Amount:450,Type:"Expense",day:1,Category:"House Rent"}]
     }
      
  ]

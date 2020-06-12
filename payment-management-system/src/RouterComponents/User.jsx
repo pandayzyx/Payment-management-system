@@ -20,18 +20,28 @@ handleChange =(e)=>{
 
     render(){
         let {User} = this.props
-        let userDetails = {
-            User:this.state.user,
-            id:User[User.length-1]*2+1
+        let Details = {
+
+            userDetails:{
+                User:this.state.user,
+                id:(User[User.length-1].id)*2+1,
+            },
+            userExpenseDetails:{
+            id:(User[User.length-1].id)*2+1,
+         Budget:"",
+         details:[{Description:"Bought Sugar",Amount:45,Type:"Expense",day:1,Category:"House Rent"}]
+            }
+           
+
         }
         let {addUser} = this.props
-        console.log(User)
+        console.log(User[User.length-1])
         return(
             <div className ="container mt-3 p-3">
 
                 <div style = {{overflow:"hidden"}} className = "col-6 bg bg-secondary p-5 offset-3">
                     <input name = "user" value = {this.state.user} onChange  = {(e)=>this.handleChange(e)} className ="form-control"/>
-                    <button onClick = {()=>addUser(userDetails)} className = "btn btn-danger mt-2">Add User</button>
+                    <button onClick = {()=>addUser(Details)} className = "btn btn-danger mt-2">Add User</button>
                 <ul>
    
                 {
