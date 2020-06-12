@@ -9,7 +9,7 @@ const initState = {
           id:1
        },
        {
-        User:"Sana",
+        User:"Saurav",
         id:2
        },
          
@@ -20,7 +20,7 @@ const initState = {
         id:uuidv4()  
        },
     {
-        Category:"Salary",
+        Category:"Salary Credit",
         id:uuidv4()
      },
      

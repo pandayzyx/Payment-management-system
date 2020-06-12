@@ -2,6 +2,7 @@ import React  from  "react"
 import {connect} from  "react-redux"
 import { v4 as uuidv4 } from 'uuid';
 import {addUserExpenseDetails} from  "../Redux/action"
+import Table from  "../Components/Table"
 
 
 class UserExpenseDetails extends React.Component{
@@ -24,7 +25,13 @@ class UserExpenseDetails extends React.Component{
      }
   render (){
     let {match,User,Type,addUserExpenseDetails,UserExpenseDetails,Category} =  this.props
-    console.log(UserExpenseDetails)
+    let item  =  User.find(item=>item.id === Number(match.params.id))
+    let tableData = UserExpenseDetails.find(item=>item.id=== Number(match.params.id))
+    let userExpenseData = tableData.details
+    console.log(userExpenseData)
+    
+
+    
     console.log(this.state.budget)
     let arr = [1000,2000,3000,5000,10000,15000,20000,30000,50000]
     let userDetails = {
@@ -43,7 +50,8 @@ class UserExpenseDetails extends React.Component{
     }
      return(
          <>
-     <div className = "row">
+           <h2> Hi!{item.User}</h2>
+     <div className = "row mt-4">
             <div className = "col-4 offset-4">
             
             <select name = "budget" onChange = {(e)=>this.handleChange(e)}  value  = {this.state.budget} className = "form-control">
@@ -56,7 +64,7 @@ class UserExpenseDetails extends React.Component{
                 </div> 
      </div>
      <div className  = "row mt-5 ">
-         <div className = "col-2">
+         <div className = "col-2 offset-1">
          <input placeholder  ="Enter Description" name = "description" value = {this.state.description} onChange  = {(e)=>this.handleChange(e)} className ="form-control"/>
            
          </div>
@@ -92,6 +100,7 @@ class UserExpenseDetails extends React.Component{
          <div className = "col-4 offset-4 mt-4">
              <button onClick ={()=>addUserExpenseDetails(userDetails)} className = "btn btn-danger">Add</button>
          </div>
+         <Table data = {userExpenseData}/>
      </div>
      </>
      )
