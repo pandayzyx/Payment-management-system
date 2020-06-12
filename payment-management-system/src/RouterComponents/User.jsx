@@ -19,12 +19,12 @@ handleChange =(e)=>{
 }
 
     render(){
+        let {User} = this.props
         let userDetails = {
             User:this.state.user,
-            id:uuidv4()
+            id:User[User.length-1]*2+1
         }
-        console.log(this.props)
-        let {addUser,User} = this.props
+        let {addUser} = this.props
         console.log(User)
         return(
             <div className ="container mt-3 p-3">

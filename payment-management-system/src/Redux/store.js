@@ -6,11 +6,11 @@ const initState = {
     User:[
        {
           User:"Gaurav",
-          id:uuidv4()
+          id:1
        },
        {
         User:"Sana",
-        id:uuidv4()  
+        id:2
        },
          
     ],
@@ -25,7 +25,18 @@ const initState = {
      },
      
  ],
- Type:["Expense","Saving"]
+ Type:["Expense","Saving"],
+ UserExpenseDetails:[
+     {
+         id:1,
+         details:[{Description:"",Amount:45,Type:"Expense"}]
+     },
+     {
+        id:2,
+        details:[{Description:"",Amount:45,Type:"Expense"}]
+    }
+     
+ ]
 
     
 }

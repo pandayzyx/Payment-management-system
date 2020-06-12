@@ -3,7 +3,7 @@ import {Route,Switch} from  "react-router-dom"
 import Home from  "../RouterComponents/Home"
 import Category from  "../RouterComponents/Category"
 import User from  "../RouterComponents/User"
-import UserDetails  from  "../RouterComponents/UserDetails"
+import UserDetails  from  "../RouterComponents/UserExpenseDetails"
 
 
 

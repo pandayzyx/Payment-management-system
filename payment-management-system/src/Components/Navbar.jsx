@@ -19,9 +19,10 @@ let data = [
 ]
     return(
       
-            <div className  = "row text-primary bg bg-light p-4 shadow-lg ">
+            <div className  = "row text-primary bg bg-white p-4 shadow-lg ">
+                <h1 style = {{float:"left"}}>Expense Manager</h1>
            {
-               data.map(item=><div  key = {uuidv4()} className = "col-4"><Link style = {{color:"black",fontWeight:"Bold"}} to =  {item.path}>{item.link}</Link></div>)
+               data.map(item=><div  key = {uuidv4()} className = "col-3"><Link style = {{color:"black",fontWeight:"Bold"}} to =  {item.path}>{item.link}</Link></div>)
            }
             </div>
     

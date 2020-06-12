@@ -1,4 +1,4 @@
-import {ADD_USER,ADD_CATEGORY} from  "./actiontype"
+import {ADD_USER,ADD_CATEGORY,ADD_USER_DETAILS} from  "./actiontype"
 
 export const reducer = (state,action)=>{
     
@@ -13,6 +13,12 @@ export const reducer = (state,action)=>{
             return{
                 ...state,
             Category:[...state.Category,action.payload]
+            }
+        }
+
+        case ADD_USER_DETAILS:{
+            return{
+                ...state,
             }
         }
 

@@ -22,7 +22,7 @@ class Home extends React.Component{
         let {User} =  this.props
         console.log(this.state.id)
         return(
-            <div className = "row">
+            <div className = "row mt-5">
             <div className = "col-6">
            <select name = "id" onChange = {(e)=>this.handleChange(e)}  value  = {this.state.id} className = "form-control">
             <option value = "">--Choose User </option>
