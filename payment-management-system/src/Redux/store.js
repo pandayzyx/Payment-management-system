@@ -2,8 +2,8 @@ import {createStore} from  "redux"
 import {reducer} from "./reducer"
 
 const initState = {
-    cartArr:[],
-    counter:0
+    User:[],
+    Category:[]
 }
  const store  = createStore(reducer,initState)
 

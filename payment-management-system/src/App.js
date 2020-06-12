@@ -1,12 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import {connect} from  "react-redux"
+import Navbar from  "../src/Components/Navbar.jsx"
+import PublicRouter from  "./Router/PublicRouter"
+
 
 function App() {
   return (
-    <div className="App">
-      
+    <div style = {{background:"grey"}} className="App">
+     <Navbar/>
+     <PublicRouter/>
     </div>
   );
 }
