@@ -8,7 +8,7 @@ class Home extends React.Component{
     constructor(props){
         super(props)
             this.state = {
-              selectUser:""
+              id:""
             }
         
     }
@@ -20,15 +20,18 @@ class Home extends React.Component{
 
     render(){
         let {User} =  this.props
+        console.log(this.state.id)
         return(
             <div className = "row">
             <div className = "col-6">
-           <select name = "selectUser" onChange = {(e)=>this.handleChange}  value  ={this.state.selectUser} className = "form-control">
+           <select name = "id" onChange = {(e)=>this.handleChange(e)}  value  = {this.state.id} className = "form-control">
             <option value = "">--Choose User </option>
             {
-                User.map(item=><option key = {uuidv4()} value = {item}><Link></Link></option>)
+                User.map(item=><option key = {uuidv4()} value = {item.id}>{item.User}</option>)
             }
            </select>
+           <br></br>
+            <Link style = {{padding:"10px 25px",background:"red",color:"white"}} to = {`/user/${this.state.id}`}>Go</Link>
             </div>
             </div>
         )
@@ -40,5 +43,8 @@ const MapStateToProps = state=>{
         User:state.User
     }
 }
+
+
+    
 export default connect(MapStateToProps,null)(Home)
 

@@ -1,4 +1,4 @@
-import {ADD_USER,ADD_CATEGORY} from  "./actiontype"
+import {ADD_USER,ADD_CATEGORY,} from  "./actiontype"
 
 export const addUser =(obj )=>{
    return{
@@ -8,12 +8,13 @@ export const addUser =(obj )=>{
 }
 
 export const addCategory =(obj)=>{
-    console.log(obj)
+   
     return{
         type:ADD_CATEGORY,
         payload:obj
     }
  }
+ 
 
  
  

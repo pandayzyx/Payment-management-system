@@ -15,6 +15,9 @@ export const reducer = (state,action)=>{
             Category:[...state.Category,action.payload]
             }
         }
+
+        
+        
         default:{
             return{
                 ...state
