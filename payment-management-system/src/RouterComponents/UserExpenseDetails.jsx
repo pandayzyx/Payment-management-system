@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
-import { addUserExpenseDetails } from "../Redux/action";
+import { addUserExpenseDetails,addUserBudget } from "../Redux/action";
 import Table from "../Components/Table";
 
 class UserExpenseDetails extends React.Component {
@@ -29,6 +29,8 @@ class UserExpenseDetails extends React.Component {
 			addUserExpenseDetails,
 			UserExpenseDetails,
 			Category,
+			addUserBudget
+			
 		} = this.props;
 		let item = User.find((item) => item.id === Number(match.params.id));
 		let tableData = UserExpenseDetails.find(
@@ -46,7 +48,12 @@ class UserExpenseDetails extends React.Component {
 			Budget: this.state.budget,
 			Type: this.state.type,
 			Category: this.state.category,
+			day:this.state.day
 		};
+		let budgetDetail ={
+			Budget: this.state.budget,
+			id: Number(match.params.id)
+		}
 		let i = 1;
 		let dayArr = [];
 		while (i <= 30) {
@@ -55,9 +62,15 @@ class UserExpenseDetails extends React.Component {
 		}
 		return (
 			<>
-				<h2> Hi!{item.User}</h2>
+				<h2 className = "text-danger "> Hi!{item.User}</h2>
+				<h2 className = "float-right text-success ">
+					Budget:{tableData.Budget}
+					<i class="fas fa-money-check-alt"></i>
+				</h2>
+
 				<div className="row mt-4">
-					<div className="col-4 offset-4">
+					<div className="col-4 offset-5">
+						
 						<select
 							name="budget"
 							onChange={(e) => this.handleChange(e)}
@@ -71,6 +84,11 @@ class UserExpenseDetails extends React.Component {
 								</option>
 							))}
 						</select>
+						<button className = "btn btn-primary mt-2" onClick = {()=>{
+							addUserBudget(budgetDetail)
+						}}>Add Budget</button>
+						
+						
 					</div>
 				</div>
 				<div className="row mt-5 ">
@@ -165,6 +183,9 @@ const MapDispatchToProps = (dispatch) => {
 	return {
 		addUserExpenseDetails: (payload) =>
 			dispatch(addUserExpenseDetails(payload)),
+			addUserBudget: (payload) =>
+			dispatch(addUserBudget(payload))
+			
 	};
 };
 

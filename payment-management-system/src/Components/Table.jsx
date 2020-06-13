@@ -26,7 +26,7 @@ export default function Table(props) {
 					        <th scope = {index+1}>1</th>
 					       <td>{item.Description}</td>
 					       <td>{item.Amount}</td>
-					       <td>{item.Type}</td>
+					       <td className = {item.Type ==="Expense"?"text-danger":"text-success"}>{item.Type}</td>
 					       <td>{item.day}</td>
 					       <td>{item.Category}</td>
 					       </tr>

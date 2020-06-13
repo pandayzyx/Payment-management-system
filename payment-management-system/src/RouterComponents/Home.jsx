@@ -37,7 +37,7 @@ class Home extends React.Component {
 					</select>
 					<br></br>
 					<Link
-						style={{ padding: "10px 25px", background: "red", color: "white" }}
+						style={{ padding: "10px 25px", background: "red", color: "white",marginLeft:"35%" }}
 						to={`/user/${this.state.id}`}
 					>
 						Go

@@ -53,7 +53,7 @@ class User extends React.Component {
 					/>
 					<button
 						onClick={() => addUser(Details)}
-						className="btn btn-danger mt-2"
+						className="btn btn-danger mt-3 offset-4"
 					>
 						Add User
 					</button>

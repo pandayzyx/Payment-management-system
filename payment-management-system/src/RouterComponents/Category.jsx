@@ -28,7 +28,7 @@ export class Category extends React.Component {
 				<div className="row">
 					<div
 						style={{ overflow: "hidden" }}
-						className="col-6 bg bg-secondary p-5 offset-3 shadow-md"
+						className="col-6 bg bg-secondary p-5 offset-3 shadow-lg"
 					>
 						<input
 							placeholder="Add category"
@@ -39,7 +39,7 @@ export class Category extends React.Component {
 						/>
 						<button
 							onClick={() => addCategory(categoryDetails)}
-							className="btn btn-danger mt-2"
+							className="btn btn-danger mt-3 offset-4"
 						>
 							Add Catgory
 						</button>
