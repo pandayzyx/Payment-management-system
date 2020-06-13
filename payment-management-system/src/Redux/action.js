@@ -1,4 +1,9 @@
-import { ADD_USER, ADD_CATEGORY, ADD_USER_EXPENSE_DETAILS,ADD_BUDGET } from "./actiontype";
+import {
+	ADD_USER,
+	ADD_CATEGORY,
+	ADD_USER_EXPENSE_DETAILS,
+	ADD_BUDGET,
+} from "./actiontype";
 
 export const addUser = (obj) => {
 	return {
@@ -22,10 +27,9 @@ export const addUserExpenseDetails = (obj) => {
 	};
 };
 export const addUserBudget = (obj) => {
- console.log(obj)
+	console.log(obj);
 	return {
-		type:ADD_BUDGET  ,
+		type: ADD_BUDGET,
 		payload: obj,
 	};
 };
-

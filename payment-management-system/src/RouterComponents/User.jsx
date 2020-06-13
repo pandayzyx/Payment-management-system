@@ -28,7 +28,7 @@ class User extends React.Component {
 				Budget: "",
 				details: [
 					{
-						Description: "Bought Sugar",
+						Description: "Paid Rent",
 						Amount: 45,
 						Type: "Expense",
 						day: 1,

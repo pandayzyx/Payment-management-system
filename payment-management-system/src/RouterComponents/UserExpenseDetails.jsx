@@ -1,9 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
-import { addUserExpenseDetails,addUserBudget } from "../Redux/action";
+import { addUserExpenseDetails, addUserBudget } from "../Redux/action";
 import Table from "../Components/Table";
-import UserChart from "../Components/UserChart"
+import UserChart from "../Components/UserChart";
 
 class UserExpenseDetails extends React.Component {
 	constructor(props) {
@@ -30,13 +30,13 @@ class UserExpenseDetails extends React.Component {
 			addUserExpenseDetails,
 			UserExpenseDetails,
 			Category,
-			addUserBudget
-			
+			addUserBudget,
 		} = this.props;
 		let item = User.find((item) => item.id === Number(match.params.id));
 		let tableData = UserExpenseDetails.find(
 			(item) => item.id === Number(match.params.id)
 		);
+		console.log(tableData)
 		let userExpenseData = tableData.details;
 		let arr = [1000, 2000, 3000, 5000, 10000, 15000, 20000, 30000, 50000];
 		let userDetails = {
@@ -46,29 +46,28 @@ class UserExpenseDetails extends React.Component {
 			Budget: this.state.budget,
 			Type: this.state.type,
 			Category: this.state.category,
-			day:this.state.day
+			day: this.state.day,
 		};
-		let budgetDetail ={
+		let budgetDetail = {
 			Budget: this.state.budget,
-			id: Number(match.params.id)
-		}
+			id: Number(match.params.id),
+		};
 		let i = 1;
 		let dayArr = [];
-		while (i <=30) {
+		while (i <= 30) {
 			dayArr.push(i);
 			i++;
 		}
 		return (
 			<>
-				<h2 className = "text-danger "> Hi!{item.User}</h2>
-				<h2 className = "float-right text-success ">
+				<h2 className="text-danger "> Hi!{item.User}</h2>
+				<h2 className="float-right text-success ">
 					Budget:{tableData.Budget}
-					<i class="fas fa-money-check-alt"></i>
+					<i className="fas fa-money-check-alt"></i>
 				</h2>
 
 				<div className="row mt-4">
 					<div className="col-4 offset-5">
-						
 						<select
 							name="budget"
 							onChange={(e) => this.handleChange(e)}
@@ -82,11 +81,14 @@ class UserExpenseDetails extends React.Component {
 								</option>
 							))}
 						</select>
-						<button className = "btn btn-primary mt-2 offset-4" onClick = {()=>{
-							addUserBudget(budgetDetail)
-						}}>Add Budget</button>
-						
-						
+						<button
+							className="btn btn-primary mt-2 offset-4"
+							onClick={() => {
+								addUserBudget(budgetDetail);
+							}}
+						>
+							Add Budget
+						</button>
 					</div>
 				</div>
 				<div className="row mt-5 ">
@@ -164,7 +166,7 @@ class UserExpenseDetails extends React.Component {
 					</div>
 					<Table data={userExpenseData} />
 					<div>
-						<UserChart id ={Number(match.params.id)} />
+						<UserChart id={Number(match.params.id)} />
 					</div>
 				</div>
 			</>
@@ -184,9 +186,7 @@ const MapDispatchToProps = (dispatch) => {
 	return {
 		addUserExpenseDetails: (payload) =>
 			dispatch(addUserExpenseDetails(payload)),
-			addUserBudget: (payload) =>
-			dispatch(addUserBudget(payload))
-			
+		addUserBudget: (payload) => dispatch(addUserBudget(payload)),
 	};
 };
 

@@ -30,7 +30,7 @@ const initState = {
 			Budget: "",
 			details: [
 				{
-					Description: "Bought Sugar",
+					Description: "Paid Rent",
 					Amount: 45,
 					Type: "Expense",
 					day: 1,
@@ -43,7 +43,7 @@ const initState = {
 			Budget: "",
 			details: [
 				{
-					Description: "Bought Shoes",
+					Description: "Paid Rent",
 					Amount: 450,
 					Type: "Expense",
 					day: 1,

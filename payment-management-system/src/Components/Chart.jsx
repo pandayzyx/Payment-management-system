@@ -8,7 +8,7 @@ import {
 	XAxis,
 	YAxis,
 	VerticalBarSeries,
-    MarkSeries,
+	MarkSeries,
 } from "react-vis";
 
 export default class Chart extends Component {
@@ -27,7 +27,7 @@ export default class Chart extends Component {
 		];
 		return (
 			<div className="Chart row">
-				<div className = "col-3 text-center">
+				<div className="col-3 text-center">
 					Weekly Basis Expense
 					<XYPlot height={300} width={300}>
 						<VerticalBarSeries data={data} />
@@ -44,7 +44,7 @@ export default class Chart extends Component {
 						<YAxis />
 					</XYPlot>
 				</div>
-				<div className ="col-3">
+				<div className="col-3 text-center">
 					Monthly Basis Report
 					<XYPlot height={300} width={300}>
 						<VerticalBarSeries data={data} />
@@ -61,8 +61,8 @@ export default class Chart extends Component {
 						<YAxis />
 					</XYPlot>
 				</div>
-                <div className = "col-3">
-					Weekly Basis Expense
+				<div className="col-3 text-center">
+					Weekly Basis Earning
 					<XYPlot height={300} width={300}>
 						<VerticalBarSeries data={data} />
 						<VerticalGridLines />
@@ -78,7 +78,7 @@ export default class Chart extends Component {
 						<YAxis />
 					</XYPlot>
 				</div>
-                <div className = "col-3">
+				<div className="col-3 text-center">
 					Weekly Basis Expense
 					<XYPlot height={300} width={300}>
 						<MarkSeries data={data} />
