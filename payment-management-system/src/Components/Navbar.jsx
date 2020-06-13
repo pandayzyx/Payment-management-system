@@ -27,7 +27,7 @@ const Navbar = () => {
 			<h1 style={{ float: "left" }}>Expense Manager</h1>
 			
 			{data.map((item) => (
-				<div key={uuidv4()} className="col-2 mt-3">
+				<div key={uuidv4()} className="col-2 mt-3 ml-5">
 					<Link style={{ color: "black", fontWeight: "Bold",fontSize:"25px" }} to={item.path}>
 						{item.link}
 					</Link>

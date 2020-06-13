@@ -84,7 +84,7 @@ class UserExpenseDetails extends React.Component {
 								</option>
 							))}
 						</select>
-						<button className = "btn btn-primary mt-2" onClick = {()=>{
+						<button className = "btn btn-primary mt-2 offset-4" onClick = {()=>{
 							addUserBudget(budgetDetail)
 						}}>Add Budget</button>
 						
@@ -156,10 +156,10 @@ class UserExpenseDetails extends React.Component {
 							))}
 						</select>
 					</div>
-					<div className="col-4 offset-4 mt-4">
+					<div className="col-4 offset-5 mt-4">
 						<button
 							onClick={() => addUserExpenseDetails(userDetails)}
-							className="btn btn-danger"
+							className="btn btn-danger offset-2 px-3"
 						>
 							Add
 						</button>
