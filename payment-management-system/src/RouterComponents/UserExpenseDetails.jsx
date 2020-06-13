@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 import { addUserExpenseDetails,addUserBudget } from "../Redux/action";
 import Table from "../Components/Table";
+import UserChart from "../Components/UserChart"
 
 class UserExpenseDetails extends React.Component {
 	constructor(props) {
@@ -37,9 +38,6 @@ class UserExpenseDetails extends React.Component {
 			(item) => item.id === Number(match.params.id)
 		);
 		let userExpenseData = tableData.details;
-		console.log(userExpenseData);
-
-		console.log(this.state.budget);
 		let arr = [1000, 2000, 3000, 5000, 10000, 15000, 20000, 30000, 50000];
 		let userDetails = {
 			id: Number(match.params.id),
@@ -56,7 +54,7 @@ class UserExpenseDetails extends React.Component {
 		}
 		let i = 1;
 		let dayArr = [];
-		while (i <= 30) {
+		while (i <=30) {
 			dayArr.push(i);
 			i++;
 		}
@@ -165,6 +163,9 @@ class UserExpenseDetails extends React.Component {
 						</button>
 					</div>
 					<Table data={userExpenseData} />
+					<div>
+						<UserChart id ={Number(match.params.id)} />
+					</div>
 				</div>
 			</>
 		);

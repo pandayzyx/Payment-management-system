@@ -27,7 +27,7 @@ export default class Chart extends Component {
 		];
 		return (
 			<div className="Chart row">
-				<div className = "col-3">
+				<div className = "col-3 text-center">
 					Weekly Basis Expense
 					<XYPlot height={300} width={300}>
 						<VerticalBarSeries data={data} />
