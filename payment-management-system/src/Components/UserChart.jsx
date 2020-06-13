@@ -9,39 +9,35 @@ import {
 	XAxis,
 	YAxis,
 	VerticalBarSeries,
-	MarkSeries,
 } from "react-vis";
 
-
-const dataSavings = [];
-
 class UserChart extends React.Component {
-ccom
+	ccom;
 
 	render() {
-		     let { id, UserExpenseDetails } = this.props;
+		let { id, UserExpenseDetails } = this.props;
 		let tableData = UserExpenseDetails.find((item) => item.id === id);
 		let userExpenseData = tableData.details;
-		    const dataExpense = []
-			const dataSavings = [];
-            for(let i=0;i<userExpenseData.length;i++){
-				if (userExpenseData[i].Type === "Expense") {
-					console.log(i)
-					dataExpense.push({ y: Number(userExpenseData[i].Amount), x: Number(userExpenseData[i].day) });
-				} 
-				else if(userExpenseData[i].Type === "Saving") {
-					console.log(true)
-					dataSavings.push({ y: Number(userExpenseData[i].Amount), x: Number(userExpenseData[i].day) });
-				}
-				else{
-					dataExpense.push({x:0,y:0})
-					dataSavings.push({x:0,y:0})
-				}		
-			
+		const dataExpense = [];
+		const dataSavings = [];
+		for (let i = 0; i < userExpenseData.length; i++) {
+			if (userExpenseData[i].Type === "Expense") {
+				console.log(i);
+				dataExpense.push({
+					y: Number(userExpenseData[i].Amount),
+					x: Number(userExpenseData[i].day),
+				});
+			} else if (userExpenseData[i].Type === "Saving") {
+				console.log(true);
+				dataSavings.push({
+					y: Number(userExpenseData[i].Amount),
+					x: Number(userExpenseData[i].day),
+				});
+			} else {
+				dataExpense.push({ x: 0, y: 0 });
+				dataSavings.push({ x: 0, y: 0 });
+			}
 		}
-
-		
-		console.log(dataExpense,dataSavings)
 
 		return (
 			<div className="Chart row p-3">
