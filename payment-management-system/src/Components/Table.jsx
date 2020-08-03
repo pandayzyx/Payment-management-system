@@ -21,7 +21,7 @@ export default function Table(props) {
 					data.map((item, index) => {
 						return (
 							<tr key={uuidv4()}>
-								<th scope={index + 1}>1</th>
+								<th scope={index + 1}>{index+1}</th>
 								<td>{item.Description}</td>
 								<td>{item.Amount}</td>
 								<td

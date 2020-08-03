@@ -34,8 +34,8 @@ class UserChart extends React.Component {
 					x: Number(userExpenseData[i].day),
 				});
 			} else {
-				dataExpense.push({ x: 0, y: 0 });
-				dataSavings.push({ x: 0, y: 0 });
+				dataExpense.push({ x: 1, y: 500 });
+				dataSavings.push({ x: 2, y: 400 });
 			}
 		}
 
