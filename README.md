@@ -9,6 +9,7 @@ Payment Mangement System is simple expense manager which allow user to keep trac
 To get started and know better here is the list of the features build inside this application
 
 1.Option to add Multiple users.
+<p> <img src  = "/payment-management-system/public/logo192.png"> </p>
 
 2.Users can also add new Category of expenses  like House Rent, Car loans etc.
 
