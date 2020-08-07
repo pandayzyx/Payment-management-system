@@ -5,17 +5,21 @@ This project was created  with  React[Create React App](https://github.com/faceb
 
 ## Overview of The Project:
 Payment Mangement System is simple expense manager which allow user to keep track of their expenditure.
+<p> <img src  = "/payment-management-system/public/home.png"> </p>
 
 To get started and know better here is the list of the features build inside this application
 
 1.Option to add Multiple users.
-<p> <img src  = "/payment-management-system/public/logo192.png"> </p>
+<p> <img src  = "/payment-management-system/public/user.png"> </p>
 
 2.Users can also add new Category of expenses  like House Rent, Car loans etc.
+<p> <img src  = "/payment-management-system/public/category.png"> </p>
 
 3.Users can get the monthly and weekly Report of their expenses
+<p> <img src  = "/payment-management-system/public/expense.png"> </p>
 
 4.Charts  histograms,and other graphical representations to visualize their expenses in a better way.
+<p> <img src  = "/payment-management-system/public/graph.png"> </p>
 
 
 

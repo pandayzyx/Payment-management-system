@@ -41,7 +41,7 @@ export class Category extends React.Component {
 							onClick={() => addCategory(categoryDetails)}
 							className="btn btn-danger mt-3 offset-4"
 						>
-							Add Catgory
+							Add Category
 						</button>
 						<div>
 							<ul>
