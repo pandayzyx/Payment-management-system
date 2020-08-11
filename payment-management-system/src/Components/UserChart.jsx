@@ -9,9 +9,8 @@ import {
 	XAxis,
 	YAxis,
 	VerticalBarSeries,
-	FlexibleXYPlot,
 	FlexibleWidthXYPlot,
-	FlexibleHeightXYPlot
+	FlexibleXYPlot
 } from "react-vis";
 
 class UserChart extends React.Component {
@@ -47,7 +46,7 @@ class UserChart extends React.Component {
 				<div className="col-6">
 					{" "}
 					Expense Bar Chart
-					<FlexibleHeightXYPlot
+					<FlexibleXYPlot
 					margin={{left: 100, right: 100}}
                         width= {600}
                          height= {300}
@@ -57,11 +56,11 @@ class UserChart extends React.Component {
 						<HorizontalGridLines />
 						<XAxis position = "middle"  title = "Days"/>
 						<YAxis position = "middle" title = "Amount(Rs)" />
-					</FlexibleHeightXYPlot>
+					</FlexibleXYPlot>
 				</div>
 				<div className="col-6">
 					Earning Bar Chart
-					<FlexibleHeightXYPlot margin={{left: 100, right: 100}}
+					<FlexibleXYPlot margin={{left: 100, right: 100}}
                         width= {600}
                          height= {300}>
 						<VerticalBarSeries data={dataSavings} />
@@ -69,31 +68,31 @@ class UserChart extends React.Component {
 						<HorizontalGridLines />
 						<XAxis position = "middle"  title = "Days" label="data" />
 						<YAxis  position = "middle" title = "Amount(Rs)" />
-					</FlexibleHeightXYPlot>
+					</FlexibleXYPlot>
 				</div>
 
 				<div className="col-6 ">
 					{" "}
 					Expense Graph
-					<FlexibleHeightXYPlot height={300} width={300}>
+					<FlexibleXYPlot height={300} width={300}>
 						<LineSeries data={dataExpense} />
 						<VerticalGridLines />
 						<HorizontalGridLines />
 						<XAxis position = "middle"  title = "Days" label="data" />
 						<YAxis  position = "middle" title = "Amount(Rs)" />
-					</FlexibleHeightXYPlot>
+					</FlexibleXYPlot>
 				</div>
 
 				<div className="col-6 ">
 					{" "}
 					Earning Graph
-					<FlexibleHeightXYPlot height={300} width={300}>
+					<FlexibleXYPlot height={300} width={300}>
 						<LineSeries data={dataSavings} />
 						<VerticalGridLines />
 						<HorizontalGridLines />
 						<XAxis position = "middle"  title = "Days" label="data" />
 						<YAxis  position = "middle" title = "Amount(Rs)" />
-					</FlexibleHeightXYPlot>
+					</FlexibleXYPlot>
 				</div>
 			</div>
 		);

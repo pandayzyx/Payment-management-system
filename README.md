@@ -2,7 +2,6 @@
 
 This project was created  with  React[Create React App](https://github.com/facebook/create-react-app).
 
-
 ## Overview of The Project:
 Payment Mangement System is simple expense manager which allow user to keep track of their expenditure.
 <p> <img src  = "/payment-management-system/public/home.png"> </p>
