@@ -1,14 +1,17 @@
 import React, { Component } from "react";
+
 import { connect } from "react-redux";
 import "../../node_modules/react-vis/dist/style.css";
 import {
-	XYPlot,
 	LineSeries,
 	VerticalGridLines,
 	HorizontalGridLines,
 	XAxis,
 	YAxis,
 	VerticalBarSeries,
+	FlexibleXYPlot,
+	FlexibleWidthXYPlot,
+	FlexibleHeightXYPlot
 } from "react-vis";
 
 class UserChart extends React.Component {
@@ -40,51 +43,57 @@ class UserChart extends React.Component {
 		}
 
 		return (
-			<div className="Chart row p-3">
+			<div className="Chart row p-2">
 				<div className="col-6">
 					{" "}
 					Expense Bar Chart
-					<XYPlot height={300} width={300}>
+					<FlexibleHeightXYPlot
+					margin={{left: 100, right: 100}}
+                        width= {600}
+                         height= {300}
+						 >
 						<VerticalBarSeries data={dataExpense} />
 						<VerticalGridLines />
 						<HorizontalGridLines />
-						<XAxis label="data" />
-						<YAxis />
-					</XYPlot>
+						<XAxis position = "middle"  title = "Days"/>
+						<YAxis position = "middle" title = "Amount(Rs)" />
+					</FlexibleHeightXYPlot>
 				</div>
 				<div className="col-6">
 					Earning Bar Chart
-					<XYPlot height={300} width={300}>
+					<FlexibleHeightXYPlot margin={{left: 100, right: 100}}
+                        width= {600}
+                         height= {300}>
 						<VerticalBarSeries data={dataSavings} />
 						<VerticalGridLines />
 						<HorizontalGridLines />
-						<XAxis label="data" />
-						<YAxis />
-					</XYPlot>
+						<XAxis position = "middle"  title = "Days" label="data" />
+						<YAxis  position = "middle" title = "Amount(Rs)" />
+					</FlexibleHeightXYPlot>
 				</div>
 
 				<div className="col-6 ">
 					{" "}
 					Expense Graph
-					<XYPlot height={300} width={300}>
+					<FlexibleHeightXYPlot height={300} width={300}>
 						<LineSeries data={dataExpense} />
 						<VerticalGridLines />
 						<HorizontalGridLines />
-						<XAxis label="data" />
-						<YAxis />
-					</XYPlot>
+						<XAxis position = "middle"  title = "Days" label="data" />
+						<YAxis  position = "middle" title = "Amount(Rs)" />
+					</FlexibleHeightXYPlot>
 				</div>
 
 				<div className="col-6 ">
 					{" "}
 					Earning Graph
-					<XYPlot height={300} width={300}>
+					<FlexibleHeightXYPlot height={300} width={300}>
 						<LineSeries data={dataSavings} />
 						<VerticalGridLines />
 						<HorizontalGridLines />
-						<XAxis label="data" />
-						<YAxis />
-					</XYPlot>
+						<XAxis position = "middle"  title = "Days" label="data" />
+						<YAxis  position = "middle" title = "Amount(Rs)" />
+					</FlexibleHeightXYPlot>
 				</div>
 			</div>
 		);
